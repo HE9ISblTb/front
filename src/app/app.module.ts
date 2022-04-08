@@ -9,9 +9,10 @@ import { AutorizationComponent } from './components/autorization/autorization.co
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AutorizationService } from './services/autorization/autorization-service';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 const appRoutes: Routes = [
-  {path: 'autorization', component: AutorizationComponent},
+  {path: '', component: AutorizationComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AutorizationComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
