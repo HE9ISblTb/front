@@ -1,0 +1,27 @@
+<div class="modal custom-modal">
+  <form class="modal-content" [formGroup]="form">
+    <h4>Авторизация</h4>
+    <div>
+      <label
+        [ngClass]="form.controls['login'].invalid && form.controls['login'].touched ? this.errorClass : this.notErrorClass"
+        for="login">Логин</label>
+      <input
+        [ngClass]="form.controls['login'].invalid && form.controls['login'].touched ? this.errorClass : this.notErrorClass"
+        id="login" type="text" maxlength="16" formControlName="login">
+    </div>
+    <div>
+      <label
+        [ngClass]="form.controls['password'].invalid && form.controls['password'].touched ? this.errorClass : this.notErrorClass"
+        for="password">Пароль</label>
+      <input
+        [ngClass]="form.controls['password'].invalid && form.controls['password'].touched ? this.errorClass : this.notErrorClass"
+        id="password" type="password" maxlength="16" formControlName="password">
+    </div>
+  </form>
+  <div class="modal-footer">
+    <a (click)="autorization()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Войти
+    </a>
+  </div>
+</div>
+
