@@ -13,7 +13,7 @@ export class AutorizationComponent implements OnInit {
   public errorClass = 'invalid';
   public notErrorClass = '';
 
-  constructor(public administrationService: AutorizationService) {
+  constructor(public autorizationService: AutorizationService) {
   }
 
   ngOnInit() {
@@ -31,9 +31,13 @@ export class AutorizationComponent implements OnInit {
 
   autorization() {
     if (this.form.valid) {
-      console.log(this.form.value.login, this.form.value.password)
+      const body = {
+        login: this.form.value.login,
+        password: this.form.value.password
+      };
+
+      this.autorizationService.signIn(body);
     }
   }
-
 
 }

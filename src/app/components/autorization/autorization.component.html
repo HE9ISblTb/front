@@ -3,7 +3,7 @@
     <h4>Авторизация</h4>
     <div>
       <label
-        [ngClass]="form.controls['login'].invalid && form.controls['login'].touched ? this.errorClass : this.notErrorClass"
+        [ngClass]="(form.controls['login'].invalid && form.controls['login'].touched) ? this.errorClass : this.notErrorClass"
         for="login">Логин</label>
       <input
         [ngClass]="form.controls['login'].invalid && form.controls['login'].touched ? this.errorClass : this.notErrorClass"
