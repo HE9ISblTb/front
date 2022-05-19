@@ -33,7 +33,7 @@ export class AutorizationService implements OnDestroy {
     }, error => {
       this.signInIndicator = false;
       console.log(this.signInIndicator);
-    })
+    });
   }
 
   ngOnDestroy() {

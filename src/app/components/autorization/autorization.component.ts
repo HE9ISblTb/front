@@ -35,7 +35,6 @@ export class AutorizationComponent implements OnInit {
         login: this.form.value.login,
         password: this.form.value.password
       };
-
       this.autorizationService.signIn(body);
     }
   }
