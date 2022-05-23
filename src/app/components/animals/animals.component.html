@@ -1,1 +1,22 @@
-<p>animals works!</p>
+<app-table-ui [data]="this.animalsService.animals">
+  <ng-template #th>
+    <th *ngFor="let header of header">{{header}}</th>
+  </ng-template>
+  <ng-template #tr let-item="item">
+    <td>{{item.id}}</td>
+    <td>{{item.nickname_animals}}</td>
+    <td>{{item.animal_species}}</td>
+    <td>{{item.gender_animals}}</td>
+    <td>{{item.photo_video}}</td>
+    <td>{{item.responsible_person}}</td>
+    <td>{{item.date_of_birth}}</td>
+    <td>{{item.vaccination}}</td>
+    <td>{{item.deworming}}</td>
+    <td>{{item.sterilization_castration}}</td>
+    <td>{{item.treatment}}</td>
+    <td>{{item.content_item}}</td>
+    <td>{{item.balance}}</td>
+    <td>{{item.documents}}</td>
+    <td>{{item.owner_animals}}</td>
+  </ng-template>
+</app-table-ui>

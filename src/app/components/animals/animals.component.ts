@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalsService} from "../../services/animals/animals-service";
+import { AnimalsService } from "../../services/animals/animals-service";
 
 @Component({
   selector: 'app-animals',
@@ -8,9 +8,12 @@ import {AnimalsService} from "../../services/animals/animals-service";
 })
 export class AnimalsComponent implements OnInit {
 
-  constructor(animalsService: AnimalsService) { }
+  public header = ['id', 'Название', 'Вид', 'Пол', 'Фото/Видео', 'Ответственное лицо', 'Дата рождения', 'Вакцинация', 'Дегельментизация', 'Стерелизация/Кастрация', 'Лечение', 'Пункт содержания', 'Баланс', 'Документы', 'Хозяин'];
 
-  ngOnInit(): void {
+  constructor(public animalsService: AnimalsService) { }
+
+  ngOnInit() {
+    this.animalsService.getAnimals();
   }
 
 }

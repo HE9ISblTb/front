@@ -21,6 +21,7 @@ export class AutorizationService implements OnDestroy {
       if (response.code === 200) {
        if (response.message === 'User found') {
          this.signInIndicator = true;
+         this.route.navigate(['animals']).then();
          console.log(this.signInIndicator);
        } else {
          this.signInIndicator = false;

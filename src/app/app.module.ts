@@ -12,6 +12,7 @@ import {AutorizationService} from './services/autorization/autorization-service'
 import {NavbarComponent} from './components/shared/navbar/navbar.component';
 import {AnimalsService} from "./services/animals/animals-service";
 import {AnimalsComponent} from './components/animals/animals.component';
+import { TableUiComponent } from './components/shared/table-ui/table-ui.component';
 
 const appRoutes: Routes = [
   {path: '', component: AutorizationComponent},
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     AutorizationComponent,
     NotFoundComponent,
     NavbarComponent,
-    AnimalsComponent
+    AnimalsComponent,
+    TableUiComponent
   ],
   imports: [
     BrowserModule,
