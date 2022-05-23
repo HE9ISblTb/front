@@ -1,0 +1,15 @@
+<app-table-ui [data]="this.ownersAnimalsService.owners_animals">
+  <ng-template #th>
+    <th *ngFor="let header of header">{{header}}</th>
+  </ng-template>
+  <ng-template #tr let-item="item">
+    <td>{{item.id}}</td>
+    <td>{{item.full_name}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.adress}}</td>
+    <td>{{item.nickname_animals}}</td>
+    <td>{{item.gender_animals}}</td>
+    <td>{{item.date_handed_over_to_owner}}</td>
+    <td>{{item.return_date_reason}}</td>
+  </ng-template>
+</app-table-ui>

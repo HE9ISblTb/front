@@ -1,0 +1,12 @@
+<app-table-ui [data]="this.contentItemsService.content_items">
+  <ng-template #th>
+    <th *ngFor="let header of header">{{header}}</th>
+  </ng-template>
+  <ng-template #tr let-item="item">
+    <td>{{item.id}}</td>
+    <td>{{item.name_content}}</td>
+    <td>{{item.full_name_owner}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.payment}}</td>
+  </ng-template>
+</app-table-ui>

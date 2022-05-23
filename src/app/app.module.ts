@@ -15,11 +15,17 @@ import {AnimalsComponent} from './components/animals/animals.component';
 import {TableUiComponent} from './components/shared/table-ui/table-ui.component';
 import {ResponsibleComponent} from './components/responsible/responsible.component';
 import {ResponsibleService} from "./services/responsible/responsible-service";
+import {ContentItemsComponent} from './components/content-items/content-items.component';
+import {ContentItemsService} from "./services/content-items/content-items-service";
+import { OwnersAnimalsComponent } from './components/owners-animals/owners-animals.component';
+import {OwnersAnimalsService} from "./services/owners-animals-service/owners-animals-service";
 
 const appRoutes: Routes = [
   {path: '', component: AutorizationComponent},
   {path: 'animals', component: AnimalsComponent},
   {path: 'responsible', component: ResponsibleComponent},
+  {path: 'content', component: ContentItemsComponent},
+  {path: 'owners', component: OwnersAnimalsComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -32,7 +38,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     AnimalsComponent,
     TableUiComponent,
-    ResponsibleComponent
+    ResponsibleComponent,
+    ContentItemsComponent,
+    OwnersAnimalsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AutorizationService, AnimalsService, ResponsibleService],
+  providers: [AutorizationService, AnimalsService, ResponsibleService, ContentItemsService, OwnersAnimalsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
