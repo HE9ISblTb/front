@@ -1,0 +1,11 @@
+<app-table-ui [data]="this.responsibleService.responsible">
+  <ng-template #th>
+    <th *ngFor="let header of header">{{header}}</th>
+  </ng-template>
+  <ng-template #tr let-item="item">
+    <td>{{item.id}}</td>
+    <td>{{item.full_name}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.vkontakte_link}}</td>
+  </ng-template>
+</app-table-ui>
