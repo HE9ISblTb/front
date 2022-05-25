@@ -17,12 +17,16 @@ import {ResponsibleComponent} from './components/responsible/responsible.compone
 import {ResponsibleService} from "./services/responsible/responsible-service";
 import {ContentItemsComponent} from './components/content-items/content-items.component';
 import {ContentItemsService} from "./services/content-items/content-items-service";
-import { OwnersAnimalsComponent } from './components/owners-animals/owners-animals.component';
+import {OwnersAnimalsComponent} from './components/owners-animals/owners-animals.component';
 import {OwnersAnimalsService} from "./services/owners-animals-service/owners-animals-service";
+import {AddAnimalsComponent} from './components/animals/add-animals/add-animals.component';
+import {EditAnimalsComponent} from './components/animals/edit-animals/edit-animals.component';
 
 const appRoutes: Routes = [
   {path: '', component: AutorizationComponent},
   {path: 'animals', component: AnimalsComponent},
+  {path: 'add-animals', component: AddAnimalsComponent},
+  {path: 'edit-animals', component: EditAnimalsComponent},
   {path: 'responsible', component: ResponsibleComponent},
   {path: 'content', component: ContentItemsComponent},
   {path: 'owners', component: OwnersAnimalsComponent},
@@ -40,7 +44,9 @@ const appRoutes: Routes = [
     TableUiComponent,
     ResponsibleComponent,
     ContentItemsComponent,
-    OwnersAnimalsComponent
+    OwnersAnimalsComponent,
+    AddAnimalsComponent,
+    EditAnimalsComponent
   ],
   imports: [
     BrowserModule,

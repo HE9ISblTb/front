@@ -1,0 +1,70 @@
+<div class="modal custom-modal">
+  <form class="modal-content" [formGroup]="form">
+    <h4>Изменить животное</h4>
+    <div>
+      <label for="nickname_animals">nickname_animals</label>
+      <input id="nickname_animals" type="text" formControlName="nickname_animals">
+    </div>
+    <div>
+      <label for="animal_species">animal_species</label>
+      <input id="animal_species" type="text" formControlName="animal_species">
+    </div>
+    <div>
+      <label for="gender_animals">Гендер животного</label>
+      <input id="gender_animals" type="text" formControlName="gender_animals">
+    </div>
+    <div>
+      <label for="photo_video">Фото/видео</label>
+      <input id="photo_video" type="text" formControlName="photo_video">
+    </div>
+    <div>
+      <label for="responsible_person">Ответсвенное лицо</label>
+      <input id="responsible_person" type="text" formControlName="responsible_person">
+    </div>
+    <div>
+      <label for="date_of_birth">Дата рождения</label>
+      <input id="date_of_birth" type="text" [placeholder]="" formControlName="date_of_birth">
+    </div>
+    <div>
+      <label for="vaccination">Вакцинация</label>
+      <input id="vaccination" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="vaccination">
+    </div>
+    <div>
+      <label for="deworming">deworming</label>
+      <input id="deworming" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="deworming">
+    </div>
+    <div>
+      <label for="sterilization_castration">sterilization_castration</label>
+      <input id="sterilization_castration" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД"
+             formControlName="sterilization_castration">
+    </div>
+    <div>
+      <label for="treatment">treatment</label>
+      <input id="treatment" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="treatment">
+    </div>
+    <div>
+      <label for="content_item">content_item</label>
+      <input id="content_item" type="text" formControlName="content_item">
+    </div>
+    <div>
+      <label for="balance">balance</label>
+      <input id="balance" type="text" formControlName="balance">
+    </div>
+    <div>
+      <label for="documents">documents</label>
+      <input id="documents" type="text" formControlName="documents">
+    </div>
+    <div>
+      <label for="owner_animals">owner_animals</label>
+      <input id="owner_animals" type="text" formControlName="owner_animals">
+    </div>
+  </form>
+  <div class="modal-footer">
+    <a (click)="edit()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Изменить
+    </a>
+    <a (click)="animalsService.closeModalEditAnimals()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+    </a>
+  </div>
+</div>
