@@ -21,12 +21,15 @@ import {OwnersAnimalsComponent} from './components/owners-animals/owners-animals
 import {OwnersAnimalsService} from "./services/owners-animals-service/owners-animals-service";
 import {AddAnimalsComponent} from './components/animals/add-animals/add-animals.component';
 import {EditAnimalsComponent} from './components/animals/edit-animals/edit-animals.component';
+import { AddResponsibleComponent } from './components/responsible/add-responsible/add-responsible.component';
+import { DeleteAnimalsComponent } from './components/animals/delete-animals/delete-animals.component';
 
 const appRoutes: Routes = [
   {path: '', component: AutorizationComponent},
   {path: 'animals', component: AnimalsComponent},
   {path: 'add-animals', component: AddAnimalsComponent},
   {path: 'edit-animals', component: EditAnimalsComponent},
+  {path: 'delete-animals', component: DeleteAnimalsComponent},
   {path: 'responsible', component: ResponsibleComponent},
   {path: 'content', component: ContentItemsComponent},
   {path: 'owners', component: OwnersAnimalsComponent},
@@ -46,7 +49,9 @@ const appRoutes: Routes = [
     ContentItemsComponent,
     OwnersAnimalsComponent,
     AddAnimalsComponent,
-    EditAnimalsComponent
+    EditAnimalsComponent,
+    AddResponsibleComponent,
+    DeleteAnimalsComponent,
   ],
   imports: [
     BrowserModule,

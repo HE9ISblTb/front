@@ -86,6 +86,7 @@ export class AddAnimalsComponent implements OnInit {
       this.animalsService.addAnimals(body);
     }
     this.animalsService.getAnimals();
+    this.animalsService.closeModalAddAnimals();
   }
 
 }

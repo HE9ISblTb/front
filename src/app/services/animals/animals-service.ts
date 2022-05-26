@@ -19,6 +19,9 @@ export class AnimalsService implements OnDestroy {
   public editAnimalsIndicator = false;
   public animalsIdForEdit = '';
   public arrayForEdit: any;
+  public animalsIdForDelete = '';
+  public deleteAnimalsIndicator = false;
+  public indicatorModalDeleteAnimals = false;
 
 
   constructor(private http: HttpClient,
@@ -89,6 +92,27 @@ export class AnimalsService implements OnDestroy {
   public closeModalEditAnimals() {
     this.indicatorModalEditAnimals = false;
     console.log(this.indicatorModalEditAnimals);
+  }
+
+  public deleteAnimals(id: any) {
+    const url = `${environment.serverUrl}/api/delete-animals`;
+    this.http.post<any>(url, id).subscribe((response) => {
+      this.deleteAnimalsIndicator = true;
+      console.log(this.deleteAnimalsIndicator);
+    }, error => {
+      console.log(this.deleteAnimalsIndicator);
+    });
+  }
+
+  public openModalDeleteAnimals(id: any) {
+    this.animalsIdForDelete = id;
+    this.indicatorModalDeleteAnimals = true;
+    console.log(this.indicatorModalDeleteAnimals);
+  }
+
+  public closeModalDeleteAnimals() {
+    this.indicatorModalDeleteAnimals = false;
+    console.log(this.indicatorModalDeleteAnimals);
   }
 
 }

@@ -1,8 +1,12 @@
 <button type="button" (click)="this.animalsService.openModalAddAnimals()">Добавить животное</button>
+
 <app-add-animals *ngIf="this.animalsService.indicatorModalAddAnimals">
 </app-add-animals>
 <app-edit-animals *ngIf="this.animalsService.indicatorModalEditAnimals">
 </app-edit-animals>
+<app-delete-animals *ngIf="this.animalsService.indicatorModalDeleteAnimals">
+</app-delete-animals>
+
 <app-table-ui [data]="this.animalsService.animals">
   <ng-template #th>
     <th *ngFor="let header of header">{{header}}</th>
@@ -27,6 +31,7 @@
             (click)="this.animalsService.openModalEditAnimals(item)">
       Изменить животное
     </button>
+    <button type="button" (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить животное</button>
   </ng-template>
 </app-table-ui>
 

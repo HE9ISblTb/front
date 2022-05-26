@@ -1,3 +1,6 @@
+<button type="button" (click)="this.responsibleService.openModalAddResponsible()">Добавить ответственное лицо</button>
+<app-add-responsible *ngIf="this.responsibleService.indicatorModalAddResponsible">
+</app-add-responsible>
 <app-table-ui [data]="this.responsibleService.responsible">
   <ng-template #th>
     <th *ngFor="let header of header">{{header}}</th>
