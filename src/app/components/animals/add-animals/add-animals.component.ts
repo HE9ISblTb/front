@@ -65,7 +65,7 @@ export class AddAnimalsComponent implements OnInit {
     });
   }
 
-  collectData() {
+  addData() {
     if (this.form.valid) {
       const body = {
         nickname_animals: this.form.value.nickname_animals,
@@ -85,6 +85,7 @@ export class AddAnimalsComponent implements OnInit {
       }
       this.animalsService.addAnimals(body);
     }
+    this.animalsService.getAnimals();
   }
 
 }

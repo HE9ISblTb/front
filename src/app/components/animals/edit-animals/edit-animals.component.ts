@@ -21,54 +21,55 @@ export class EditAnimalsComponent implements OnInit {
   ngOnInit() {
     this.animalsService.getAnimals();
     this.form = new FormGroup({
-      nickname_animals: new FormControl('', [
+      nickname_animals: new FormControl(this.animalsService.arrayForEdit.nickname_animals, [
         Validators.required
       ]),
-      animal_species: new FormControl('', [
+      animal_species: new FormControl(this.animalsService.arrayForEdit.animal_species, [
         Validators.required
       ]),
-      gender_animals: new FormControl('', [
+      gender_animals: new FormControl(this.animalsService.arrayForEdit.gender_animals, [
         Validators.required
       ]),
-      photo_video: new FormControl('', [
+      photo_video: new FormControl(this.animalsService.arrayForEdit.photo_video, [
         Validators.required
       ]),
-      responsible_person: new FormControl('', [
+      responsible_person: new FormControl(this.animalsService.arrayForEdit.responsible_person, [
         Validators.required
       ]),
-      date_of_birth: new FormControl('', [
+      date_of_birth: new FormControl(this.animalsService.arrayForEdit.date_of_birth, [
         Validators.required
       ]),
-      vaccination: new FormControl('', [
+      vaccination: new FormControl(this.animalsService.arrayForEdit.vaccination, [
         Validators.required
       ]),
-      deworming: new FormControl('', [
+      deworming: new FormControl(this.animalsService.arrayForEdit.deworming, [
         Validators.required
       ]),
-      sterilization_castration: new FormControl('', [
+      sterilization_castration: new FormControl(this.animalsService.arrayForEdit.sterilization_castration, [
         Validators.required
       ]),
-      treatment: new FormControl('', [
+      treatment: new FormControl(this.animalsService.arrayForEdit.treatment, [
         Validators.required
       ]),
-      content_item: new FormControl('', [
+      content_item: new FormControl(this.animalsService.arrayForEdit.content_item, [
         Validators.required
       ]),
-      balance: new FormControl('', [
+      balance: new FormControl(this.animalsService.arrayForEdit.balance, [
         Validators.required
       ]),
-      documents: new FormControl('', [
+      documents: new FormControl(this.animalsService.arrayForEdit.documents, [
         Validators.required
       ]),
-      owner_animals: new FormControl('', [
+      owner_animals: new FormControl(this.animalsService.arrayForEdit.owner_animals, [
         Validators.required
       ]),
     });
   }
 
-  edit() {
+  editData() {
     if (this.form.valid) {
       const body = {
+        id: this.animalsService.arrayForEdit.id,
         nickname_animals: this.form.value.nickname_animals,
         animal_species: this.form.value.animal_species,
         gender_animals: this.form.value.gender_animals,
@@ -86,6 +87,7 @@ export class EditAnimalsComponent implements OnInit {
       }
       this.animalsService.editAnimals(body);
     }
+    this.animalsService.getAnimals();
   }
 
 }

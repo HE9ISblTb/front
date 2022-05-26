@@ -23,7 +23,10 @@
     <td>{{item.balance}}</td>
     <td>{{item.documents}}</td>
     <td>{{item.owner_animals}}</td>
-    <button type="button" (click)="this.animalsService.openModalEditAnimals()">Изменить животное</button>
+    <button type="button"
+            (click)="this.animalsService.openModalEditAnimals(item)">
+      Изменить животное
+    </button>
   </ng-template>
 </app-table-ui>
 
