@@ -1,0 +1,29 @@
+<div class="modal custom-modal">
+  <form class="modal-content" [formGroup]="form">
+    <h4>Добавить пункт содержания</h4>
+    <div>
+      <label for="name_content">name_content</label>
+      <input id="name_content" type="text" formControlName="name_content">
+    </div>
+    <div>
+      <label for="full_name_owner">full_name_owner</label>
+      <input id="full_name_owner" type="text" formControlName="full_name_owner">
+    </div>
+    <div>
+      <label for="phone">phone</label>
+      <input id="phone" type="text" formControlName="phone">
+    </div>
+    <div>
+      <label for="payment">payment</label>
+      <input id="payment" type="text" formControlName="payment">
+    </div>
+  </form>
+  <div class="modal-footer">
+    <a (click)="addData()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Добавить
+    </a>
+    <a (click)="contentItemsService.closeModalAddContentItems()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+    </a>
+  </div>
+</div>

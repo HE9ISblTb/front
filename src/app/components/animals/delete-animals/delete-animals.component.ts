@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AnimalsService} from "../../../services/animals/animals-service";
 
 @Component({
@@ -11,7 +11,7 @@ export class DeleteAnimalsComponent implements OnInit {
   constructor(public animalsServise: AnimalsService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   deleteData() {
@@ -19,8 +19,8 @@ export class DeleteAnimalsComponent implements OnInit {
       id: this.animalsServise.animalsIdForDelete
     }
     this.animalsServise.deleteAnimals(body);
-    this.animalsServise.getAnimals();
     this.animalsServise.closeModalDeleteAnimals();
+    this.animalsServise.getAnimals();
   }
 
 }

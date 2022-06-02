@@ -1,0 +1,41 @@
+<div class="modal custom-modal">
+  <form class="modal-content" [formGroup]="form">
+    <h4>Изменение данных о хозяине</h4>
+    <div>
+      <label for="full_name">full_name</label>
+      <input id="full_name" type="text" formControlName="full_name">
+    </div>
+    <div>
+      <label for="phone">phone</label>
+      <input id="phone" type="text" formControlName="phone">
+    </div>
+    <div>
+      <label for="adress">adress</label>
+      <input id="adress" type="text" formControlName="adress">
+    </div>
+    <div>
+      <label for="nickname_animals">nickname_animals</label>
+      <input id="nickname_animals" type="text" formControlName="nickname_animals">
+    </div>
+    <div>
+      <label for="gender_animals">gender_animals</label>
+      <input id="gender_animals" type="text" formControlName="gender_animals">
+    </div>
+    <div>
+      <label for="date_handed_over_to_owner">date_handed_over_to_owner</label>
+      <input id="date_handed_over_to_owner" type="text" formControlName="date_handed_over_to_owner">
+    </div>
+    <div>
+      <label for="return_date_reason">return_date_reason</label>
+      <input id="return_date_reason" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="return_date_reason">
+    </div>
+  </form>
+  <div class="modal-footer">
+    <a (click)="editData()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Изменить
+    </a>
+    <a (click)="ownersAnimalsService.closeModalEditAnimals()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+    </a>
+  </div>
+</div>

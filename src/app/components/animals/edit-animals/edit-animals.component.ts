@@ -86,8 +86,8 @@ export class EditAnimalsComponent implements OnInit {
         owner_animals: this.form.value.owner_animals,
       }
       this.animalsService.editAnimals(body);
-      this.animalsService.getAnimals();
       this.animalsService.closeModalEditAnimals();
+      this.animalsService.getAnimals();
     }
   }
 

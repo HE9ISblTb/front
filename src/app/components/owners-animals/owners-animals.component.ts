@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OwnersAnimalsService } from "../../services/owners-animals-service/owners-animals-service";
+import { OwnersAnimalsService } from "../../services/owners-animals/owners-animals-service";
 
 @Component({
   selector: 'app-owners-animals',

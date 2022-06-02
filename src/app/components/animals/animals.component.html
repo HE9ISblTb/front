@@ -27,11 +27,8 @@
     <td>{{item.balance}}</td>
     <td>{{item.documents}}</td>
     <td>{{item.owner_animals}}</td>
-    <button type="button"
-            (click)="this.animalsService.openModalEditAnimals(item)">
-      Изменить животное
-    </button>
-    <button type="button" (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить животное</button>
+    <button type="button" (click)="this.animalsService.openModalEditAnimals(item)">Изменить</button>
+    <button type="button" (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить</button>
   </ng-template>
 </app-table-ui>
 

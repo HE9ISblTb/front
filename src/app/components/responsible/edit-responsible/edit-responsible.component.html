@@ -1,0 +1,25 @@
+<div class="modal custom-modal">
+  <form class="modal-content" [formGroup]="form">
+    <h4>Изменение данных о животном</h4>
+    <div>
+      <label for="full_name">full_name</label>
+      <input id="full_name" type="text" formControlName="full_name">
+    </div>
+    <div>
+      <label for="phone">phone</label>
+      <input id="phone" type="text" formControlName="phone">
+    </div>
+    <div>
+      <label for="vkontakte_link">vkontakte_link</label>
+      <input id="vkontakte_link" type="text" formControlName="vkontakte_link">
+    </div>
+  </form>
+  <div class="modal-footer">
+    <a (click)="editData()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Изменить
+    </a>
+    <a (click)="responsibleService.closeModalEditResponsible()"
+       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+    </a>
+  </div>
+</div>

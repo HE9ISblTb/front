@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ContentItemsService} from "../../services/content-items/content-items-service";
 
 @Component({
@@ -10,7 +10,8 @@ export class ContentItemsComponent implements OnInit {
 
   public header = ['id', 'Наименнование', 'ФИО владельца', 'Номер телефона', 'Оплата'];
 
-  constructor(public contentItemsService: ContentItemsService) { }
+  constructor(public contentItemsService: ContentItemsService) {
+  }
 
   ngOnInit() {
     this.contentItemsService.getContentItems();

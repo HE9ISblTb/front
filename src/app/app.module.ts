@@ -18,11 +18,19 @@ import {ResponsibleService} from "./services/responsible/responsible-service";
 import {ContentItemsComponent} from './components/content-items/content-items.component';
 import {ContentItemsService} from "./services/content-items/content-items-service";
 import {OwnersAnimalsComponent} from './components/owners-animals/owners-animals.component';
-import {OwnersAnimalsService} from "./services/owners-animals-service/owners-animals-service";
+import {OwnersAnimalsService} from "./services/owners-animals/owners-animals-service";
 import {AddAnimalsComponent} from './components/animals/add-animals/add-animals.component';
 import {EditAnimalsComponent} from './components/animals/edit-animals/edit-animals.component';
-import { AddResponsibleComponent } from './components/responsible/add-responsible/add-responsible.component';
-import { DeleteAnimalsComponent } from './components/animals/delete-animals/delete-animals.component';
+import {AddResponsibleComponent} from './components/responsible/add-responsible/add-responsible.component';
+import {DeleteAnimalsComponent} from './components/animals/delete-animals/delete-animals.component';
+import {DeleteResponsibleComponent} from './components/responsible/delete-responsible/delete-responsible.component';
+import {EditResponsibleComponent} from './components/responsible/edit-responsible/edit-responsible.component';
+import {AddContentItemsComponent} from './components/content-items/add-content-items/add-content-items.component';
+import {EditContentItemsComponent} from './components/content-items/edit-content-items/edit-content-items.component';
+import {DeleteContentItemsComponent} from './components/content-items/delete-content-items/delete-content-items.component';
+import {AddOwnersAnimalsComponent} from './components/owners-animals/add-owners-animals/add-owners-animals.component';
+import {DeleteOwnersAnimalsComponent} from './components/owners-animals/delete-owners-animals/delete-owners-animals.component';
+import {EditOwnersAnimalsComponent} from './components/owners-animals/edit-owners-animals/edit-owners-animals.component';
 
 const appRoutes: Routes = [
   {path: '', component: AutorizationComponent},
@@ -31,6 +39,7 @@ const appRoutes: Routes = [
   {path: 'edit-animals', component: EditAnimalsComponent},
   {path: 'delete-animals', component: DeleteAnimalsComponent},
   {path: 'responsible', component: ResponsibleComponent},
+  {path: 'add-responsible', component: AddResponsibleComponent},
   {path: 'content', component: ContentItemsComponent},
   {path: 'owners', component: OwnersAnimalsComponent},
   {path: '**', component: NotFoundComponent}
@@ -50,8 +59,16 @@ const appRoutes: Routes = [
     OwnersAnimalsComponent,
     AddAnimalsComponent,
     EditAnimalsComponent,
-    AddResponsibleComponent,
     DeleteAnimalsComponent,
+    AddResponsibleComponent,
+    DeleteResponsibleComponent,
+    EditResponsibleComponent,
+    AddContentItemsComponent,
+    EditContentItemsComponent,
+    DeleteContentItemsComponent,
+    AddOwnersAnimalsComponent,
+    DeleteOwnersAnimalsComponent,
+    EditOwnersAnimalsComponent,
   ],
   imports: [
     BrowserModule,

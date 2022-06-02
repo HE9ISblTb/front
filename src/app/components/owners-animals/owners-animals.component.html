@@ -1,3 +1,12 @@
+<button type="button" (click)="this.ownersAnimalsService.openModalAddOwnersAnimals()">Добавить хозяина</button>
+
+<app-add-owners-animals *ngIf="this.ownersAnimalsService.indicatorModalAddOwnersAnimals">
+</app-add-owners-animals>
+<app-edit-owners-animals *ngIf="this.ownersAnimalsService.indicatorModalEditOwnersAnimals">
+</app-edit-owners-animals>
+<app-delete-owners-animals *ngIf="this.ownersAnimalsService.indicatorModalDeleteOwnersAnimals">
+</app-delete-owners-animals>
+
 <app-table-ui [data]="this.ownersAnimalsService.owners_animals">
   <ng-template #th>
     <th *ngFor="let header of header">{{header}}</th>
@@ -11,5 +20,7 @@
     <td>{{item.gender_animals}}</td>
     <td>{{item.date_handed_over_to_owner}}</td>
     <td>{{item.return_date_reason}}</td>
+    <button type="button" (click)="this.ownersAnimalsService.openModalEditOwnersAnimals(item)">Изменить</button>
+    <button type="button" (click)="this.ownersAnimalsService.openModalDeleteOwnersAnimals(item.id)">Удалить</button>
   </ng-template>
 </app-table-ui>

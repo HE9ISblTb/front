@@ -1,3 +1,12 @@
+<button type="button" (click)="this.contentItemsService.openModalAddContentItems()">Добавить пункт содержания</button>
+
+<app-add-content-items *ngIf="this.contentItemsService.indicatorModalAddContentItems">
+</app-add-content-items>
+<app-edit-content-items *ngIf="this.contentItemsService.indicatorModalEditContentItems">
+</app-edit-content-items>
+<app-delete-content-items *ngIf="this.contentItemsService.indicatorModalDeleteContentItems">
+</app-delete-content-items>
+
 <app-table-ui [data]="this.contentItemsService.content_items">
   <ng-template #th>
     <th *ngFor="let header of header">{{header}}</th>
@@ -8,5 +17,7 @@
     <td>{{item.full_name_owner}}</td>
     <td>{{item.phone}}</td>
     <td>{{item.payment}}</td>
+    <button type="button" (click)="this.contentItemsService.openModalEditContentItems(item)">Изменить</button>
+    <button type="button" (click)="this.contentItemsService.openModalDeleteContentItems(item.id)">Удалить</button>
   </ng-template>
 </app-table-ui>

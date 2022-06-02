@@ -1,6 +1,12 @@
 <button type="button" (click)="this.responsibleService.openModalAddResponsible()">Добавить ответственное лицо</button>
+
 <app-add-responsible *ngIf="this.responsibleService.indicatorModalAddResponsible">
 </app-add-responsible>
+<app-edit-responsible *ngIf="this.responsibleService.indicatorModalEditResponsible">
+</app-edit-responsible>
+<app-delete-responsible *ngIf="this.responsibleService.indicatorModalDeleteResponsible">
+</app-delete-responsible>
+
 <app-table-ui [data]="this.responsibleService.responsible">
   <ng-template #th>
     <th *ngFor="let header of header">{{header}}</th>
@@ -10,5 +16,7 @@
     <td>{{item.full_name}}</td>
     <td>{{item.phone}}</td>
     <td>{{item.vkontakte_link}}</td>
+    <button type="button" (click)="this.responsibleService.openModalEditResponsible(item)">Изменить</button>
+    <button type="button" (click)="this.responsibleService.openModalDeleteResponsible(item.id)">Удалить</button>
   </ng-template>
 </app-table-ui>
