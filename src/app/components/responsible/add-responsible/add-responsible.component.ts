@@ -20,10 +20,10 @@ export class AddResponsibleComponent implements OnInit {
   ngOnInit() {
     this.responsibleService.getResponsible()
     this.form = new FormGroup({
-      full_name: new FormControl('', [
+      full_name_responsible: new FormControl('', [
         Validators.required
       ]),
-      phone: new FormControl('', [
+      phone_responsible: new FormControl('', [
         Validators.required
       ]),
       vkontakte_link: new FormControl('', [
@@ -35,8 +35,8 @@ export class AddResponsibleComponent implements OnInit {
   addData() {
     if (this.form.valid) {
       const body = {
-        full_name: this.form.value.full_name,
-        phone: this.form.value.phone,
+        full_name_responsible: this.form.value.full_name_responsible,
+        phone_responsible: this.form.value.phone_responsible,
         vkontakte_link: this.form.value.vkontakte_link
       }
       this.responsibleService.addResponsible(body);

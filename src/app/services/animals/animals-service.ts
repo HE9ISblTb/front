@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Animals} from "../../class/animals";
+import {FullAnimals} from "../../class/full-animals";
 
 export interface Get {
   code: number,
@@ -13,6 +14,7 @@ export interface Get {
 export class AnimalsService implements OnDestroy {
 
   public animals: Animals;
+  public fullAnimals: FullAnimals;
   public indicatorModalAddAnimals = false;
   public addAnimalsIndicator = false;
   public indicatorModalEditAnimals = false;
@@ -22,7 +24,7 @@ export class AnimalsService implements OnDestroy {
   public animalsIdForDelete = '';
   public deleteAnimalsIndicator = false;
   public indicatorModalDeleteAnimals = false;
-
+  public indicatorModalFullAnimals = false;
 
   constructor(private http: HttpClient,
               private route: Router,
@@ -36,7 +38,6 @@ export class AnimalsService implements OnDestroy {
     const url = `${environment.serverUrl}/api/animals`;
     this.http.get<Get>(url).subscribe((data) => {
       this.animals = data['data'];
-      console.log(this.animals);
     });
   }
 
@@ -45,25 +46,12 @@ export class AnimalsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.addAnimalsIndicator = true;
-        console.log(this.addAnimalsIndicator);
       } else {
         this.addAnimalsIndicator = false;
-        console.log(this.addAnimalsIndicator);
       }
     }, error => {
       this.addAnimalsIndicator = false;
-      console.log(this.addAnimalsIndicator);
     });
-  }
-
-  public openModalAddAnimals() {
-    this.indicatorModalAddAnimals = true;
-    console.log(this.indicatorModalAddAnimals);
-  }
-
-  public closeModalAddAnimals() {
-    this.indicatorModalAddAnimals = false;
-    console.log(this.indicatorModalAddAnimals);
   }
 
   public editAnimals(body: any) {
@@ -71,48 +59,71 @@ export class AnimalsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.editAnimalsIndicator = true;
-        console.log(this.editAnimalsIndicator);
       } else {
         this.editAnimalsIndicator = false;
-        console.log(this.editAnimalsIndicator);
       }
     }, error => {
       this.editAnimalsIndicator = false;
-      console.log(this.editAnimalsIndicator);
     });
-  }
-
-  public openModalEditAnimals(item: any) {
-    this.indicatorModalEditAnimals = true;
-    this.animalsIdForEdit = item.id;
-    this.arrayForEdit = item;
-    console.log(this.arrayForEdit);
-  }
-
-  public closeModalEditAnimals() {
-    this.indicatorModalEditAnimals = false;
-    console.log(this.indicatorModalEditAnimals);
   }
 
   public deleteAnimals(id: any) {
     const url = `${environment.serverUrl}/api/delete-animals`;
     this.http.post<any>(url, id).subscribe((response) => {
       this.deleteAnimalsIndicator = true;
-      console.log(this.deleteAnimalsIndicator);
     }, error => {
-      console.log(this.deleteAnimalsIndicator);
     });
+  }
+
+  public getFullAnimal(id: any) {
+    const body = {
+      id: id
+    }
+    const url = `${environment.serverUrl}/api/full-animals`;
+    this.http.post<any>(url, body).subscribe((response) => {
+      if (response.code === 200) {
+        this.fullAnimals = response.data;
+        console.log(this.fullAnimals);
+        this.openModalFullAnimals();
+      } else {
+      }
+    }, error => {
+    });
+  }
+
+  public openModalAddAnimals() {
+    this.indicatorModalAddAnimals = true;
+  }
+
+  public closeModalAddAnimals() {
+    this.indicatorModalAddAnimals = false;
+  }
+
+  public openModalEditAnimals(item: any) {
+    this.indicatorModalEditAnimals = true;
+    this.animalsIdForEdit = item.id;
+    this.arrayForEdit = item;
+  }
+
+  public closeModalEditAnimals() {
+    this.indicatorModalEditAnimals = false;
   }
 
   public openModalDeleteAnimals(id: any) {
     this.animalsIdForDelete = id;
     this.indicatorModalDeleteAnimals = true;
-    console.log(this.indicatorModalDeleteAnimals);
   }
 
   public closeModalDeleteAnimals() {
     this.indicatorModalDeleteAnimals = false;
-    console.log(this.indicatorModalDeleteAnimals);
+  }
+
+  public openModalFullAnimals() {
+    this.indicatorModalFullAnimals = true;
+  }
+
+  public closeModalFullAnimals() {
+    this.indicatorModalFullAnimals = false;
   }
 
 }

@@ -1,4 +1,6 @@
-<button type="button" (click)="this.animalsService.openModalAddAnimals()">Добавить животное</button>
+<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+        (click)="this.animalsService.openModalAddAnimals()">Добавить животное
+</button>
 
 <app-add-animals *ngIf="this.animalsService.indicatorModalAddAnimals">
 </app-add-animals>
@@ -6,6 +8,8 @@
 </app-edit-animals>
 <app-delete-animals *ngIf="this.animalsService.indicatorModalDeleteAnimals">
 </app-delete-animals>
+<app-full-animals *ngIf="this.animalsService.indicatorModalFullAnimals">
+</app-full-animals>
 
 <app-table-ui [data]="this.animalsService.animals">
   <ng-template #th>
@@ -13,22 +17,22 @@
   </ng-template>
   <ng-template #tr let-item="item">
     <td>{{item.id}}</td>
-    <td>{{item.nickname_animals}}</td>
+    <td (click)="this.animalsService.getFullAnimal(item.id)">{{item.nickname_animals}}</td>
     <td>{{item.animal_species}}</td>
     <td>{{item.gender_animals}}</td>
     <td>{{item.photo_video}}</td>
     <td>{{item.responsible_person}}</td>
-    <td>{{item.date_of_birth}}</td>
     <td>{{item.vaccination}}</td>
     <td>{{item.deworming}}</td>
     <td>{{item.sterilization_castration}}</td>
-    <td>{{item.treatment}}</td>
     <td>{{item.content_item}}</td>
     <td>{{item.balance}}</td>
-    <td>{{item.documents}}</td>
-    <td>{{item.owner_animals}}</td>
-    <button type="button" (click)="this.animalsService.openModalEditAnimals(item)">Изменить</button>
-    <button type="button" (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить</button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.animalsService.openModalEditAnimals(item)">Изменить
+    </button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить
+    </button>
   </ng-template>
 </app-table-ui>
 

@@ -1,4 +1,6 @@
-<button type="button" (click)="this.contentItemsService.openModalAddContentItems()">Добавить пункт содержания</button>
+<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+        (click)="this.contentItemsService.openModalAddContentItems()">Добавить пункт содержания
+</button>
 
 <app-add-content-items *ngIf="this.contentItemsService.indicatorModalAddContentItems">
 </app-add-content-items>
@@ -15,9 +17,13 @@
     <td>{{item.id}}</td>
     <td>{{item.name_content}}</td>
     <td>{{item.full_name_owner}}</td>
-    <td>{{item.phone}}</td>
+    <td>{{item.phone_content_items}}</td>
     <td>{{item.payment}}</td>
-    <button type="button" (click)="this.contentItemsService.openModalEditContentItems(item)">Изменить</button>
-    <button type="button" (click)="this.contentItemsService.openModalDeleteContentItems(item.id)">Удалить</button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.contentItemsService.openModalEditContentItems(item)">Изменить
+    </button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.contentItemsService.openModalDeleteContentItems(item.id)">Удалить
+    </button>
   </ng-template>
 </app-table-ui>

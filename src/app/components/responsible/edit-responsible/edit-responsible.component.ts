@@ -19,10 +19,10 @@ export class EditResponsibleComponent implements OnInit {
   ngOnInit() {
     this.responsibleService.getResponsible();
     this.form = new FormGroup({
-      full_name: new FormControl(this.responsibleService.arrayForEdit.full_name, [
+      full_name_responsible: new FormControl(this.responsibleService.arrayForEdit.full_name_responsible, [
         Validators.required
       ]),
-      phone: new FormControl(this.responsibleService.arrayForEdit.phone, [
+      phone_responsible: new FormControl(this.responsibleService.arrayForEdit.phone_responsible, [
         Validators.required
       ]),
       vkontakte_link: new FormControl(this.responsibleService.arrayForEdit.vkontakte_link, [
@@ -36,8 +36,8 @@ export class EditResponsibleComponent implements OnInit {
     if (this.form.valid) {
       const body = {
         id: this.responsibleService.arrayForEdit.id,
-        full_name: this.form.value.full_name,
-        phone: this.form.value.phone,
+        full_name_responsible: this.form.value.full_name_responsible,
+        phone_responsible: this.form.value.phone_responsible,
         vkontakte_link: this.form.value.vkontakte_link
       }
       this.responsibleService.editResponsible(body);

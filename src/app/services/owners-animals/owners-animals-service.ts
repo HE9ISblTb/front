@@ -35,7 +35,6 @@ export class OwnersAnimalsService implements OnDestroy {
     const url = `${environment.serverUrl}/api/owners`;
     this.http.get<Get>(url).subscribe((data) => {
       this.owners_animals = data['data'];
-      console.log(this.owners_animals);
     });
   }
 
@@ -44,25 +43,12 @@ export class OwnersAnimalsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.addOwnersAnimalsIndicator = true;
-        console.log(this.addOwnersAnimalsIndicator);
       } else {
         this.addOwnersAnimalsIndicator = false;
-        console.log(this.addOwnersAnimalsIndicator);
       }
     }, error => {
       this.addOwnersAnimalsIndicator = false;
-      console.log(this.addOwnersAnimalsIndicator);
     });
-  }
-
-  public openModalAddOwnersAnimals() {
-    this.indicatorModalAddOwnersAnimals = true;
-    console.log(this.indicatorModalAddOwnersAnimals);
-  }
-
-  public closeModalAddOwnersAnimals() {
-    this.indicatorModalAddOwnersAnimals = false;
-    console.log(this.indicatorModalAddOwnersAnimals);
   }
 
   public editOwnersAnimals(body: any) {
@@ -70,48 +56,47 @@ export class OwnersAnimalsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.editOwnersAnimalsIndicator = true;
-        console.log(this.editOwnersAnimalsIndicator);
       } else {
         this.editOwnersAnimalsIndicator = false;
-        console.log(this.editOwnersAnimalsIndicator);
       }
     }, error => {
       this.editOwnersAnimalsIndicator = false;
-      console.log(this.editOwnersAnimalsIndicator);
     });
-  }
-
-  public openModalEditOwnersAnimals(item: any) {
-    this.indicatorModalEditOwnersAnimals = true;
-    this.ownersAnimalsIdForEdit = item.id;
-    this.arrayForEdit = item;
-    console.log(this.arrayForEdit);
-  }
-
-  public closeModalEditAnimals() {
-    this.indicatorModalEditOwnersAnimals = false;
-    console.log(this.indicatorModalEditOwnersAnimals);
   }
 
   public deleteOwnersAnimals(id: any) {
     const url = `${environment.serverUrl}/api/delete-owners`;
     this.http.post<any>(url, id).subscribe((response) => {
       this.deleteOwnersAnimalsIndicator = true;
-      console.log(this.deleteOwnersAnimalsIndicator);
     }, error => {
-      console.log(this.deleteOwnersAnimalsIndicator);
     });
+  }
+
+  public openModalAddOwnersAnimals() {
+    this.indicatorModalAddOwnersAnimals = true;
+  }
+
+  public closeModalAddOwnersAnimals() {
+    this.indicatorModalAddOwnersAnimals = false;
+  }
+
+  public openModalEditOwnersAnimals(item: any) {
+    this.indicatorModalEditOwnersAnimals = true;
+    this.ownersAnimalsIdForEdit = item.id;
+    this.arrayForEdit = item;
+  }
+
+  public closeModalEditAnimals() {
+    this.indicatorModalEditOwnersAnimals = false;
   }
 
   public openModalDeleteOwnersAnimals(id: any) {
     this.ownersAnimalsIdForDelete = id;
     this.indicatorModalDeleteOwnersAnimals = true;
-    console.log(this.indicatorModalDeleteOwnersAnimals);
   }
 
   public closeModalDeleteOwnersAnimals() {
     this.indicatorModalDeleteOwnersAnimals = false;
-    console.log(this.indicatorModalDeleteOwnersAnimals);
   }
 
 }

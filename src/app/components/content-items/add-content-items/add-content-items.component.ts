@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ContentItemsService} from "../../../services/content-items/content-items-service";
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
@@ -25,7 +25,7 @@ export class AddContentItemsComponent implements OnInit {
       full_name_owner: new FormControl('', [
         Validators.required
       ]),
-      phone: new FormControl('', [
+      phone_content_items: new FormControl('', [
         Validators.required
       ]),
       payment: new FormControl('', [
@@ -39,7 +39,7 @@ export class AddContentItemsComponent implements OnInit {
       const body = {
         name_content: this.form.value.name_content,
         full_name_owner: this.form.value.full_name_owner,
-        phone: this.form.value.phone,
+        phone_content_items: this.form.value.phone_content_items,
         payment: this.form.value.payment
       }
       this.contentItemsService.addContentItems(body);

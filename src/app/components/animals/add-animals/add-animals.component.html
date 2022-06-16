@@ -2,60 +2,117 @@
   <form class="modal-content" [formGroup]="form">
     <h4>Добавить животное</h4>
     <div>
-      <label for="nickname_animals">nickname_animals</label>
-      <input id="nickname_animals" type="text" formControlName="nickname_animals">
+      <label
+        [ngClass]="(form.controls['nickname_animals'].invalid && form.controls['nickname_animals'].touched) ? this.errorClass : this.notErrorClass"
+        for="animal_species">nickname_animals</label>
+      <input
+        [ngClass]="form.controls['nickname_animals'].invalid && form.controls['nickname_animals'].touched ? this.errorClass : this.notErrorClass"
+        id="nickname_animals" type="text" formControlName="nickname_animals">
     </div>
     <div>
-      <label for="animal_species">animal_species</label>
-      <input id="animal_species" type="text" formControlName="animal_species">
+      <label
+        [ngClass]="(form.controls['animal_species'].invalid && form.controls['animal_species'].touched) ? this.errorClass : this.notErrorClass"
+        for="animal_species">animal_species</label>
+      <input
+        [ngClass]="form.controls['animal_species'].invalid && form.controls['animal_species'].touched ? this.errorClass : this.notErrorClass"
+        id="animal_species" type="text" maxlength="16" formControlName="animal_species">
     </div>
     <div>
-      <label for="gender_animals">Гендер животного</label>
-      <input id="gender_animals" type="text" formControlName="gender_animals">
+      <label
+        [ngClass]="(form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched) ? this.errorClass : this.notErrorClass"
+        for="gender_animals">gender_animals</label>
+      <input
+        [ngClass]="form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched ? this.errorClass : this.notErrorClass"
+        id="gender_animals" type="text" maxlength="1" formControlName="gender_animals">
     </div>
     <div>
-      <label for="photo_video">Фото/видео</label>
-      <input id="photo_video" type="text" formControlName="photo_video">
+      <label
+        [ngClass]="(form.controls['photo_video'].invalid && form.controls['photo_video'].touched) ? this.errorClass : this.notErrorClass"
+        for="photo_video">photo_video</label>
+      <input
+        [ngClass]="form.controls['photo_video'].invalid && form.controls['photo_video'].touched ? this.errorClass : this.notErrorClass"
+        id="photo_video" type="text" formControlName="photo_video">
     </div>
     <div>
-      <label for="responsible_person">Ответсвенное лицо</label>
-      <input id="responsible_person" type="text" formControlName="responsible_person">
+      <label
+        [ngClass]="(form.controls['responsible_person'].invalid && form.controls['responsible_person'].touched) ? this.errorClass : this.notErrorClass"
+        for="responsible_person">responsible_person</label>
+      <input
+        [ngClass]="form.controls['responsible_person'].invalid && form.controls['responsible_person'].touched ? this.errorClass : this.notErrorClass"
+        id="responsible_person" type="text" maxlength="16" formControlName="responsible_person">
     </div>
     <div>
-      <label for="date_of_birth">Дата рождения</label>
-      <input id="date_of_birth" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="date_of_birth">
+      <label
+        [ngClass]="(form.controls['date_of_birth'].invalid && form.controls['date_of_birth'].touched) ? this.errorClass : this.notErrorClass"
+        for="date_of_birth">date_of_birth</label>
+      <input
+        [ngClass]="form.controls['date_of_birth'].invalid && form.controls['date_of_birth'].touched ? this.errorClass : this.notErrorClass"
+        id="date_of_birth" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="date_of_birth">
     </div>
     <div>
-      <label for="vaccination">Вакцинация</label>
-      <input id="vaccination" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="vaccination">
+      <label
+        [ngClass]="(form.controls['vaccination'].invalid && form.controls['vaccination'].touched) ? this.errorClass : this.notErrorClass"
+        for="vaccination">vaccination</label>
+      <input
+        [ngClass]="form.controls['vaccination'].invalid && form.controls['vaccination'].touched ? this.errorClass : this.notErrorClass"
+        id="vaccination" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="vaccination">
     </div>
     <div>
-      <label for="deworming">deworming</label>
-      <input id="deworming" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="deworming">
+      <label
+        [ngClass]="(form.controls['deworming'].invalid && form.controls['deworming'].touched) ? this.errorClass : this.notErrorClass"
+        for="deworming">deworming</label>
+      <input
+        [ngClass]="form.controls['deworming'].invalid && form.controls['deworming'].touched ? this.errorClass : this.notErrorClass"
+        id="deworming" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="deworming">
     </div>
     <div>
-      <label for="sterilization_castration">sterilization_castration</label>
-      <input id="sterilization_castration" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="sterilization_castration">
+      <label
+        [ngClass]="(form.controls['sterilization_castration'].invalid && form.controls['sterilization_castration'].touched) ? this.errorClass : this.notErrorClass"
+        for="sterilization_castration">sterilization_castration</label>
+      <input
+        [ngClass]="form.controls['sterilization_castration'].invalid && form.controls['sterilization_castration'].touched ? this.errorClass : this.notErrorClass"
+        id="sterilization_castration" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД"
+        formControlName="animal_species">
     </div>
     <div>
-      <label for="treatment">treatment</label>
-      <input id="treatment" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="treatment">
+      <label
+        [ngClass]="(form.controls['treatment'].invalid && form.controls['treatment'].touched) ? this.errorClass : this.notErrorClass"
+        for="treatment">treatment</label>
+      <input
+        [ngClass]="form.controls['treatment'].invalid && form.controls['treatment'].touched ? this.errorClass : this.notErrorClass"
+        id="treatment" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="treatment">
     </div>
     <div>
-      <label for="content_item">content_item</label>
-      <input id="content_item" type="text" formControlName="content_item">
+      <label
+        [ngClass]="(form.controls['content_item'].invalid && form.controls['content_item'].touched) ? this.errorClass : this.notErrorClass"
+        for="content_item">content_item</label>
+      <input
+        [ngClass]="form.controls['content_item'].invalid && form.controls['content_item'].touched ? this.errorClass : this.notErrorClass"
+        id="content_item" type="text" formControlName="content_item">
     </div>
     <div>
-      <label for="balance">balance</label>
-      <input id="balance" type="text" formControlName="balance">
+      <label
+        [ngClass]="(form.controls['balance'].invalid && form.controls['balance'].touched) ? this.errorClass : this.notErrorClass"
+        for="balance">balance</label>
+      <input
+        [ngClass]="form.controls['balance'].invalid && form.controls['balance'].touched ? this.errorClass : this.notErrorClass"
+        id="balance" type="text" formControlName="balance">
     </div>
     <div>
-      <label for="documents">documents</label>
-      <input id="documents" type="text" formControlName="documents">
+      <label
+        [ngClass]="(form.controls['documents'].invalid && form.controls['documents'].touched) ? this.errorClass : this.notErrorClass"
+        for="documents">documents</label>
+      <input
+        [ngClass]="form.controls['documents'].invalid && form.controls['documents'].touched ? this.errorClass : this.notErrorClass"
+        id="documents" type="text" formControlName="documents">
     </div>
     <div>
-      <label for="owner_animals">owner_animals</label>
-      <input id="owner_animals" type="text" formControlName="owner_animals">
+      <label
+        [ngClass]="(form.controls['owner_animals'].invalid && form.controls['owner_animals'].touched) ? this.errorClass : this.notErrorClass"
+        for="owner_animals">owner_animals</label>
+      <input
+        [ngClass]="form.controls['owner_animals'].invalid && form.controls['owner_animals'].touched ? this.errorClass : this.notErrorClass"
+        id="owner_animals" type="text" formControlName="owner_animals">
     </div>
   </form>
   <div class="modal-footer">

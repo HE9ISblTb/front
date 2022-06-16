@@ -17,23 +17,18 @@ export class AutorizationService implements OnDestroy {
   public signIn(body: any) {
     const url = `${environment.serverUrl}/api/sign-in`;
     this.http.post<any>(url, body).subscribe((response) => {
-      console.log(response);
       if (response.code === 200) {
        if (response.message === 'User found') {
          this.signInIndicator = true;
          this.route.navigate(['animals']).then();
-         console.log(this.signInIndicator);
        } else {
          this.signInIndicator = false;
-         console.log(this.signInIndicator);
        }
       } else {
         this.signInIndicator = false;
-        console.log(this.signInIndicator);
       }
     }, error => {
       this.signInIndicator = false;
-      console.log(this.signInIndicator);
     });
   }
 

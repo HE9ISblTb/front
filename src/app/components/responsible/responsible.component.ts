@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ResponsibleService} from "../../services/responsible/responsible-service";
 
 @Component({
@@ -10,7 +10,8 @@ export class ResponsibleComponent implements OnInit {
 
   public header = ['id', 'ФИО', 'Номер телефона', 'Адрес Вконтакте'];
 
-  constructor(public responsibleService: ResponsibleService) { }
+  constructor(public responsibleService: ResponsibleService) {
+  }
 
   ngOnInit() {
     this.responsibleService.getResponsible();

@@ -8,7 +8,7 @@ import {ContentItemsService} from "../../../services/content-items/content-items
 })
 export class DeleteContentItemsComponent implements OnInit {
 
-  constructor(public contentItemsServise: ContentItemsService) {
+  constructor(public contentItemsService: ContentItemsService) {
   }
 
   ngOnInit() {
@@ -16,11 +16,11 @@ export class DeleteContentItemsComponent implements OnInit {
 
   deleteData() {
     const body = {
-      id: this.contentItemsServise.contentItemsIdForDelete
+      id: this.contentItemsService.contentItemsIdForDelete
     }
-    this.contentItemsServise.deleteContentItems(body);
-    this.contentItemsServise.getContentItems();
-    this.contentItemsServise.closeModalDeleteContentItems();
+    this.contentItemsService.deleteContentItems(body);
+    this.contentItemsService.getContentItems();
+    this.contentItemsService.closeModalDeleteContentItems();
   }
 
 }

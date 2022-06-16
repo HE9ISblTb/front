@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OwnersAnimalsService} from "../../../services/owners-animals/owners-animals-service";
 
 @Component({

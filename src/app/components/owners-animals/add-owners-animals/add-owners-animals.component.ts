@@ -22,7 +22,7 @@ export class AddOwnersAnimalsComponent implements OnInit {
       full_name: new FormControl('', [
         Validators.required
       ]),
-      phone: new FormControl('', [
+      phone_owners: new FormControl('', [
         Validators.required
       ]),
       adress: new FormControl('', [
@@ -47,7 +47,7 @@ export class AddOwnersAnimalsComponent implements OnInit {
     if (this.form.valid) {
       const body = {
         full_name: this.form.value.full_name,
-        phone: this.form.value.phone,
+        phone_owners: this.form.value.phone_owners,
         adress: this.form.value.adress,
         nickname_animals: this.form.value.nickname_animals,
         gender_animals: this.form.value.gender_animals,

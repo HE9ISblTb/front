@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {OwnersAnimalsService} from "../../../services/owners-animals/owners-animals-service";
 
@@ -23,7 +23,7 @@ export class EditOwnersAnimalsComponent implements OnInit {
       full_name: new FormControl(this.ownersAnimalsService.arrayForEdit.full_name, [
         Validators.required
       ]),
-      phone: new FormControl(this.ownersAnimalsService.arrayForEdit.phone, [
+      phone_owners: new FormControl(this.ownersAnimalsService.arrayForEdit.phone_owners, [
         Validators.required
       ]),
       adress: new FormControl(this.ownersAnimalsService.arrayForEdit.adress, [
@@ -49,7 +49,7 @@ export class EditOwnersAnimalsComponent implements OnInit {
       const body = {
         id: this.ownersAnimalsService.arrayForEdit.id,
         full_name: this.form.value.full_name,
-        phone: this.form.value.phone,
+        phone_owners: this.form.value.phone_owners,
         adress: this.form.value.adress,
         nickname_animals: this.form.value.nickname_animals,
         gender_animals: this.form.value.gender_animals,

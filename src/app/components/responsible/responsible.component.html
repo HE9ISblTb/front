@@ -1,4 +1,6 @@
-<button type="button" (click)="this.responsibleService.openModalAddResponsible()">Добавить ответственное лицо</button>
+<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+        (click)="this.responsibleService.openModalAddResponsible()">Добавить ответственное лицо
+</button>
 
 <app-add-responsible *ngIf="this.responsibleService.indicatorModalAddResponsible">
 </app-add-responsible>
@@ -13,10 +15,14 @@
   </ng-template>
   <ng-template #tr let-item="item">
     <td>{{item.id}}</td>
-    <td>{{item.full_name}}</td>
-    <td>{{item.phone}}</td>
+    <td>{{item.full_name_responsible}}</td>
+    <td>{{item.phone_responsible}}</td>
     <td>{{item.vkontakte_link}}</td>
-    <button type="button" (click)="this.responsibleService.openModalEditResponsible(item)">Изменить</button>
-    <button type="button" (click)="this.responsibleService.openModalDeleteResponsible(item.id)">Удалить</button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.responsibleService.openModalEditResponsible(item)">Изменить
+    </button>
+    <button type="button" class="waves-effect waves-teal btn-flat"
+            (click)="this.responsibleService.openModalDeleteResponsible(item.id)">Удалить
+    </button>
   </ng-template>
 </app-table-ui>

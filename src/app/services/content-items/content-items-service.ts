@@ -35,7 +35,6 @@ export class ContentItemsService implements OnDestroy {
     const url = `${environment.serverUrl}/api/content`;
     this.http.get<Get>(url).subscribe((data) => {
       this.content_items = data['data'];
-      console.log(this.content_items);
     });
   }
 
@@ -44,25 +43,12 @@ export class ContentItemsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.addContentItemsIndicator = true;
-        console.log(this.addContentItemsIndicator);
       } else {
         this.addContentItemsIndicator = false;
-        console.log(this.addContentItemsIndicator);
       }
     }, error => {
       this.addContentItemsIndicator = false;
-      console.log(this.addContentItemsIndicator);
     });
-  }
-
-  public openModalAddContentItems() {
-    this.indicatorModalAddContentItems = true;
-    console.log(this.indicatorModalAddContentItems);
-  }
-
-  public closeModalAddContentItems() {
-    this.indicatorModalAddContentItems = false;
-    console.log(this.indicatorModalAddContentItems);
   }
 
   public editContentItems(body: any) {
@@ -70,48 +56,47 @@ export class ContentItemsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.editContentItemsIndicator = true;
-        console.log(this.editContentItemsIndicator);
       } else {
         this.editContentItemsIndicator = false;
-        console.log(this.editContentItemsIndicator);
       }
     }, error => {
       this.editContentItemsIndicator = false;
-      console.log(this.editContentItemsIndicator);
     });
-  }
-
-  public openModalEditContentItems(item: any) {
-    this.indicatorModalEditContentItems = true;
-    this.contentItemsIdForEdit = item.id;
-    this.arrayForEdit = item;
-    console.log(this.arrayForEdit);
-  }
-
-  public closeModalEditContentItems() {
-    this.indicatorModalEditContentItems = false;
-    console.log(this.indicatorModalEditContentItems);
   }
 
   public deleteContentItems(id: any) {
     const url = `${environment.serverUrl}/api/delete-content`;
     this.http.post<any>(url, id).subscribe((response) => {
       this.deleteContentItemsIndicator = true;
-      console.log(this.deleteContentItemsIndicator);
     }, error => {
-      console.log(this.deleteContentItemsIndicator);
     });
+  }
+
+  public openModalAddContentItems() {
+    this.indicatorModalAddContentItems = true;
+  }
+
+  public closeModalAddContentItems() {
+    this.indicatorModalAddContentItems = false;
+  }
+
+  public openModalEditContentItems(item: any) {
+    this.indicatorModalEditContentItems = true;
+    this.contentItemsIdForEdit = item.id;
+    this.arrayForEdit = item;
+  }
+
+  public closeModalEditContentItems() {
+    this.indicatorModalEditContentItems = false;
   }
 
   public openModalDeleteContentItems(id: any) {
     this.contentItemsIdForDelete = id;
     this.indicatorModalDeleteContentItems = true;
-    console.log(this.indicatorModalDeleteContentItems);
   }
 
   public closeModalDeleteContentItems() {
     this.indicatorModalDeleteContentItems = false;
-    console.log(this.indicatorModalDeleteContentItems);
   }
 
 }

@@ -14,5 +14,4 @@ export class Animals {
   balance: string
   documents: string
   owner_animals: string
-  deleted_at: string
 }

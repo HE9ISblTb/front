@@ -1,7 +1,7 @@
 export class OwnersAnimals {
   id: number
   full_name: string
-  phone: string
+  phone_owners: string
   adress: string
   nickname_animals: string
   gender_animals: string
