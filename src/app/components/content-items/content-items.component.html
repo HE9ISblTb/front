@@ -1,4 +1,4 @@
-<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+<button type="button" class="modal-action modal-close btn-flat"
         (click)="this.contentItemsService.openModalAddContentItems()">Добавить пункт содержания
 </button>
 
@@ -19,10 +19,10 @@
     <td>{{item.full_name_owner}}</td>
     <td>{{item.phone_content_items}}</td>
     <td>{{item.payment}}</td>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.contentItemsService.openModalEditContentItems(item)">Изменить
     </button>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.contentItemsService.openModalDeleteContentItems(item.id)">Удалить
     </button>
   </ng-template>

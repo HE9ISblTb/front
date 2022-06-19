@@ -21,24 +21,31 @@ export class EditOwnersAnimalsComponent implements OnInit {
     this.ownersAnimalsService.getOwnersAnimals();
     this.form = new FormGroup({
       full_name: new FormControl(this.ownersAnimalsService.arrayForEdit.full_name, [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_owners: new FormControl(this.ownersAnimalsService.arrayForEdit.phone_owners, [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       adress: new FormControl(this.ownersAnimalsService.arrayForEdit.adress, [
+        Validators.pattern('[а-яА-ЯёЁ0-9\\.\\,\\- ]+$'),
         Validators.required
       ]),
       nickname_animals: new FormControl(this.ownersAnimalsService.arrayForEdit.nickname_animals, [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       gender_animals: new FormControl(this.ownersAnimalsService.arrayForEdit.gender_animals, [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       date_handed_over_to_owner: new FormControl(this.ownersAnimalsService.arrayForEdit.date_handed_over_to_owner, [
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9]$'),
         Validators.required
       ]),
       return_date_reason: new FormControl(this.ownersAnimalsService.arrayForEdit.return_date_reason, [
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ\\, ]+$'),
         Validators.required
       ]),
     });

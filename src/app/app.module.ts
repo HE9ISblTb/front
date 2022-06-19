@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {AutorizationComponent} from './components/autorization/autorization.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 
+import {appService} from "./services/app-service";
 import {AutorizationService} from './services/autorization/autorization-service';
 import {NavbarComponent} from './components/shared/navbar/navbar.component';
 import {AnimalsService} from "./services/animals/animals-service";
@@ -75,7 +76,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AutorizationService, AnimalsService, ResponsibleService, ContentItemsService, OwnersAnimalsService],
+  providers: [AutorizationService, AnimalsService, ResponsibleService, ContentItemsService, OwnersAnimalsService, appService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

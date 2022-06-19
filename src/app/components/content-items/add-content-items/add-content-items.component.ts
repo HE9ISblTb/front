@@ -20,15 +20,19 @@ export class AddContentItemsComponent implements OnInit {
     this.contentItemsService.getContentItems();
     this.form = new FormGroup({
       name_content: new FormControl('', [
+        Validators.pattern('[а-яА-ЯёЁ0-9 \\-]+$'),
         Validators.required
       ]),
       full_name_owner: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_content_items: new FormControl('', [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       payment: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ0-9 ]+$'),
         Validators.required
       ]),
     });

@@ -1,7 +1,6 @@
 import {Injectable, OnDestroy} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {ActivatedRoute, Router} from "@angular/router";
 import {Animals} from "../../class/animals";
 import {FullAnimals} from "../../class/full-animals";
 
@@ -26,9 +25,7 @@ export class AnimalsService implements OnDestroy {
   public indicatorModalDeleteAnimals = false;
   public indicatorModalFullAnimals = false;
 
-  constructor(private http: HttpClient,
-              private route: Router,
-              private router: ActivatedRoute) {
+  constructor(private http: HttpClient) {
   }
 
   ngOnDestroy() {

@@ -20,15 +20,19 @@ export class EditContentItemsComponent implements OnInit {
     this.contentItemsService.getContentItems();
     this.form = new FormGroup({
       name_content: new FormControl(this.contentItemsService.arrayForEdit.name_content, [
+        Validators.pattern('[а-яА-ЯёЁ0-9 \\-]+$'),
         Validators.required
       ]),
       full_name_owner: new FormControl(this.contentItemsService.arrayForEdit.full_name_owner, [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_content_items: new FormControl(this.contentItemsService.arrayForEdit.phone_content_items, [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       payment: new FormControl(this.contentItemsService.arrayForEdit.payment, [
+        Validators.pattern('^[а-яА-ЯёЁ0-9 ]+$'),
         Validators.required
       ]),
     });

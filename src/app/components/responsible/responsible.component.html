@@ -1,4 +1,4 @@
-<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+<button type="button" class="modal-action btn-flat"
         (click)="this.responsibleService.openModalAddResponsible()">Добавить ответственное лицо
 </button>
 
@@ -18,10 +18,10 @@
     <td>{{item.full_name_responsible}}</td>
     <td>{{item.phone_responsible}}</td>
     <td>{{item.vkontakte_link}}</td>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.responsibleService.openModalEditResponsible(item)">Изменить
     </button>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.responsibleService.openModalDeleteResponsible(item.id)">Удалить
     </button>
   </ng-template>

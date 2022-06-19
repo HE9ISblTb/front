@@ -2,28 +2,44 @@
   <form class="modal-content" [formGroup]="form">
     <h4>Изменение данных о пункте содержания</h4>
     <div>
-      <label for="name_content">name_content</label>
-      <input id="name_content" type="text" formControlName="name_content">
+      <label
+        [ngClass]="(form.controls['name_content'].invalid && form.controls['name_content'].touched) ? this.errorClass : this.notErrorClass"
+        for="name_content">Наименование</label>
+      <input
+        [ngClass]="form.controls['name_content'].invalid && form.controls['name_content'].touched ? this.errorClass : this.notErrorClass"
+        id="name_content" type="text" formControlName="name_content">
     </div>
     <div>
-      <label for="full_name_owner">full_name_owner</label>
-      <input id="full_name_owner" type="text" formControlName="full_name_owner">
+      <label
+        [ngClass]="(form.controls['full_name_owner'].invalid && form.controls['full_name_owner'].touched) ? this.errorClass : this.notErrorClass"
+        for="full_name_owner">ФИО владельца</label>
+      <input
+        [ngClass]="form.controls['full_name_owner'].invalid && form.controls['full_name_owner'].touched ? this.errorClass : this.notErrorClass"
+        id="full_name_owner" type="text" formControlName="full_name_owner">
     </div>
     <div>
-      <label for="phone">phone</label>
-      <input id="phone" type="text" formControlName="phone">
+      <label
+        [ngClass]="(form.controls['phone_content_items'].invalid && form.controls['phone_content_items'].touched) ? this.errorClass : this.notErrorClass"
+        for="phone_content_items">Номер телефона</label>
+      <input
+        [ngClass]="form.controls['phone_content_items'].invalid && form.controls['phone_content_items'].touched ? this.errorClass : this.notErrorClass"
+        id="phone_content_items" type="text" maxlength="20" formControlName="phone_content_items">
     </div>
     <div>
-      <label for="payment">payment</label>
-      <input id="payment" type="text" formControlName="payment">
+      <label
+        [ngClass]="(form.controls['payment'].invalid && form.controls['payment'].touched) ? this.errorClass : this.notErrorClass"
+        for="payment">Оплата</label>
+      <input
+        [ngClass]="form.controls['payment'].invalid && form.controls['payment'].touched ? this.errorClass : this.notErrorClass"
+        id="payment" type="text" formControlName="payment">
     </div>
   </form>
   <div class="modal-footer">
     <a (click)="editData()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Изменить
+       class=" modal-action modal-close btn-flat">Изменить
     </a>
     <a (click)="contentItemsService.closeModalEditContentItems()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+       class=" modal-action modal-close btn-flat">Закрыть
     </a>
   </div>
 </div>

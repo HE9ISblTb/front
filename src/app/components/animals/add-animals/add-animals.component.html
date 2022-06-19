@@ -4,7 +4,7 @@
     <div>
       <label
         [ngClass]="(form.controls['nickname_animals'].invalid && form.controls['nickname_animals'].touched) ? this.errorClass : this.notErrorClass"
-        for="animal_species">nickname_animals</label>
+        for="nickname_animals">Кличка животного</label>
       <input
         [ngClass]="form.controls['nickname_animals'].invalid && form.controls['nickname_animals'].touched ? this.errorClass : this.notErrorClass"
         id="nickname_animals" type="text" formControlName="nickname_animals">
@@ -12,15 +12,15 @@
     <div>
       <label
         [ngClass]="(form.controls['animal_species'].invalid && form.controls['animal_species'].touched) ? this.errorClass : this.notErrorClass"
-        for="animal_species">animal_species</label>
+        for="animal_species">Вид животного</label>
       <input
         [ngClass]="form.controls['animal_species'].invalid && form.controls['animal_species'].touched ? this.errorClass : this.notErrorClass"
-        id="animal_species" type="text" maxlength="16" formControlName="animal_species">
+        id="animal_species" type="text" formControlName="animal_species">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched) ? this.errorClass : this.notErrorClass"
-        for="gender_animals">gender_animals</label>
+        for="gender_animals">Пол животного</label>
       <input
         [ngClass]="form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched ? this.errorClass : this.notErrorClass"
         id="gender_animals" type="text" maxlength="1" formControlName="gender_animals">
@@ -28,7 +28,7 @@
     <div>
       <label
         [ngClass]="(form.controls['photo_video'].invalid && form.controls['photo_video'].touched) ? this.errorClass : this.notErrorClass"
-        for="photo_video">photo_video</label>
+        for="photo_video">Ссылка на фото/видео</label>
       <input
         [ngClass]="form.controls['photo_video'].invalid && form.controls['photo_video'].touched ? this.errorClass : this.notErrorClass"
         id="photo_video" type="text" formControlName="photo_video">
@@ -36,15 +36,15 @@
     <div>
       <label
         [ngClass]="(form.controls['responsible_person'].invalid && form.controls['responsible_person'].touched) ? this.errorClass : this.notErrorClass"
-        for="responsible_person">responsible_person</label>
+        for="responsible_person">Ответстветнное лицо </label>
       <input
         [ngClass]="form.controls['responsible_person'].invalid && form.controls['responsible_person'].touched ? this.errorClass : this.notErrorClass"
-        id="responsible_person" type="text" maxlength="16" formControlName="responsible_person">
+        id="responsible_person" type="text" formControlName="responsible_person">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['date_of_birth'].invalid && form.controls['date_of_birth'].touched) ? this.errorClass : this.notErrorClass"
-        for="date_of_birth">date_of_birth</label>
+        for="date_of_birth">Дата рождения</label>
       <input
         [ngClass]="form.controls['date_of_birth'].invalid && form.controls['date_of_birth'].touched ? this.errorClass : this.notErrorClass"
         id="date_of_birth" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="date_of_birth">
@@ -52,40 +52,44 @@
     <div>
       <label
         [ngClass]="(form.controls['vaccination'].invalid && form.controls['vaccination'].touched) ? this.errorClass : this.notErrorClass"
-        for="vaccination">vaccination</label>
+        for="vaccination">Вакцинация</label>
       <input
         [ngClass]="form.controls['vaccination'].invalid && form.controls['vaccination'].touched ? this.errorClass : this.notErrorClass"
-        id="vaccination" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="vaccination">
+        id="vaccination" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД, после укажите примечание"
+        formControlName="vaccination">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['deworming'].invalid && form.controls['deworming'].touched) ? this.errorClass : this.notErrorClass"
-        for="deworming">deworming</label>
+        for="deworming">Дегельметизация</label>
       <input
         [ngClass]="form.controls['deworming'].invalid && form.controls['deworming'].touched ? this.errorClass : this.notErrorClass"
-        id="deworming" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="deworming">
+        id="deworming" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД, после укажите примечание"
+        formControlName="deworming">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['sterilization_castration'].invalid && form.controls['sterilization_castration'].touched) ? this.errorClass : this.notErrorClass"
-        for="sterilization_castration">sterilization_castration</label>
+        for="sterilization_castration">Стерилизация/кастрация</label>
       <input
         [ngClass]="form.controls['sterilization_castration'].invalid && form.controls['sterilization_castration'].touched ? this.errorClass : this.notErrorClass"
-        id="sterilization_castration" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД"
-        formControlName="animal_species">
+        id="sterilization_castration" type="text"
+        placeholder="Укажите дату в формате ГГГГ-ММ-ДД, после укажите примечание"
+        formControlName="sterilization_castration">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['treatment'].invalid && form.controls['treatment'].touched) ? this.errorClass : this.notErrorClass"
-        for="treatment">treatment</label>
+        for="treatment">Лечение</label>
       <input
         [ngClass]="form.controls['treatment'].invalid && form.controls['treatment'].touched ? this.errorClass : this.notErrorClass"
-        id="treatment" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД" formControlName="treatment">
+        id="treatment" type="text" placeholder="Укажите дату в формате ГГГГ-ММ-ДД, после укажите примечание"
+        formControlName="treatment">
     </div>
     <div>
       <label
         [ngClass]="(form.controls['content_item'].invalid && form.controls['content_item'].touched) ? this.errorClass : this.notErrorClass"
-        for="content_item">content_item</label>
+        for="content_item">Пункт содержания</label>
       <input
         [ngClass]="form.controls['content_item'].invalid && form.controls['content_item'].touched ? this.errorClass : this.notErrorClass"
         id="content_item" type="text" formControlName="content_item">
@@ -93,7 +97,7 @@
     <div>
       <label
         [ngClass]="(form.controls['balance'].invalid && form.controls['balance'].touched) ? this.errorClass : this.notErrorClass"
-        for="balance">balance</label>
+        for="balance">Баланс</label>
       <input
         [ngClass]="form.controls['balance'].invalid && form.controls['balance'].touched ? this.errorClass : this.notErrorClass"
         id="balance" type="text" formControlName="balance">
@@ -101,7 +105,7 @@
     <div>
       <label
         [ngClass]="(form.controls['documents'].invalid && form.controls['documents'].touched) ? this.errorClass : this.notErrorClass"
-        for="documents">documents</label>
+        for="documents">Документы</label>
       <input
         [ngClass]="form.controls['documents'].invalid && form.controls['documents'].touched ? this.errorClass : this.notErrorClass"
         id="documents" type="text" formControlName="documents">
@@ -109,7 +113,7 @@
     <div>
       <label
         [ngClass]="(form.controls['owner_animals'].invalid && form.controls['owner_animals'].touched) ? this.errorClass : this.notErrorClass"
-        for="owner_animals">owner_animals</label>
+        for="owner_animals">Хозяин</label>
       <input
         [ngClass]="form.controls['owner_animals'].invalid && form.controls['owner_animals'].touched ? this.errorClass : this.notErrorClass"
         id="owner_animals" type="text" formControlName="owner_animals">
@@ -117,10 +121,10 @@
   </form>
   <div class="modal-footer">
     <a (click)="addData()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Добавить
+       class=" modal-action modal-close btn-flat">Добавить
     </a>
     <a (click)="animalsService.closeModalAddAnimals()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+       class=" modal-action modal-close btn-flat">Закрыть
     </a>
   </div>
 </div>

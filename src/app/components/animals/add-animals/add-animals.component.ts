@@ -21,11 +21,11 @@ export class AddAnimalsComponent implements OnInit {
     this.animalsService.getAnimals();
     this.form = new FormGroup({
       nickname_animals: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       animal_species: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       gender_animals: new FormControl('', [
@@ -33,47 +33,45 @@ export class AddAnimalsComponent implements OnInit {
         Validators.required
       ]),
       photo_video: new FormControl('', [
-        Validators.pattern('^[a-zA-Z0-9]+$'),
         Validators.required
       ]),
       responsible_person: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       date_of_birth: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ0-9]+$'),
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9]$'),
         Validators.required
       ]),
       vaccination: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       deworming: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       sterilization_castration: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       treatment: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       content_item: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('[а-яА-ЯёЁ0-9 \\-]+$'),
         Validators.required
       ]),
       balance: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^[а-яА-ЯёЁ0-9 ]+$'),
         Validators.required
       ]),
       documents: new FormControl('', [
-        Validators.pattern('^[a-zA-Z0-9]+$'),
         Validators.required
       ]),
       owner_animals: new FormControl('', [
-        Validators.pattern('^[а-яА-ЯёЁ]+$'),
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
     });

@@ -2,24 +2,36 @@
   <form class="modal-content" [formGroup]="form">
     <h4>Изменение данных о животном</h4>
     <div>
-      <label for="full_name_responsible">full_name</label>
-      <input id="full_name_responsible" type="text" formControlName="full_name_responsible">
+      <label
+        [ngClass]="(form.controls['full_name_responsible'].invalid && form.controls['full_name_responsible'].touched) ? this.errorClass : this.notErrorClass"
+        for="full_name_responsible">ФИО</label>
+      <input
+        [ngClass]="form.controls['full_name_responsible'].invalid && form.controls['full_name_responsible'].touched ? this.errorClass : this.notErrorClass"
+        id="full_name_responsible" type="text" formControlName="full_name_responsible">
     </div>
     <div>
-      <label for="phone_responsible">phone</label>
-      <input id="phone_responsible" type="text" formControlName="phone_responsible">
+      <label
+        [ngClass]="(form.controls['phone_responsible'].invalid && form.controls['phone_responsible'].touched) ? this.errorClass : this.notErrorClass"
+        for="phone_responsible">Номер телефона</label>
+      <input
+        [ngClass]="form.controls['phone_responsible'].invalid && form.controls['phone_responsible'].touched ? this.errorClass : this.notErrorClass"
+        id="phone_responsible" type="text" formControlName="phone_responsible">
     </div>
     <div>
-      <label for="vkontakte_link">vkontakte_link</label>
-      <input id="vkontakte_link" type="text" formControlName="vkontakte_link">
+      <label
+        [ngClass]="(form.controls['vkontakte_link'].invalid && form.controls['vkontakte_link'].touched) ? this.errorClass : this.notErrorClass"
+        for="vkontakte_link">Адрес ВКонтакте</label>
+      <input
+        [ngClass]="form.controls['vkontakte_link'].invalid && form.controls['vkontakte_link'].touched ? this.errorClass : this.notErrorClass"
+        id="vkontakte_link" type="text" formControlName="vkontakte_link">
     </div>
   </form>
   <div class="modal-footer">
     <a (click)="editData()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Изменить
+       class=" modal-action modal-close btn-flat">Изменить
     </a>
     <a (click)="responsibleService.closeModalEditResponsible()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+       class=" modal-action modal-close btn-flat">Закрыть
     </a>
   </div>
 </div>

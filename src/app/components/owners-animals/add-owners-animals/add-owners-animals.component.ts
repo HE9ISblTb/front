@@ -20,24 +20,31 @@ export class AddOwnersAnimalsComponent implements OnInit {
     this.ownersAnimalsService.getOwnersAnimals();
     this.form = new FormGroup({
       full_name: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_owners: new FormControl('', [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       adress: new FormControl('', [
+        Validators.pattern('[а-яА-ЯёЁ0-9\\.\\,\\- ]+$'),
         Validators.required
       ]),
       nickname_animals: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       gender_animals: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       date_handed_over_to_owner: new FormControl('', [
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9]$'),
         Validators.required
       ]),
       return_date_reason: new FormControl('', [
+        Validators.pattern('^(?:[0-9]{2})?[0-9]{2}.[0-3]?[0-9].[0-3]?[0-9][а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
     });

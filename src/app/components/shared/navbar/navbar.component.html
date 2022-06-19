@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper blue darken-1">
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <ul *ngIf="this.appService.authorizationIndicator" class="left hide-on-med-and-down">
       <li><a href="/animals">Животные</a></li>
       <li><a href="/responsible">Ответсвенные лица</a></li>
       <li><a href="/content">Пункты содержания</a></li>

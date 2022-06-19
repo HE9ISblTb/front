@@ -1,4 +1,4 @@
-<button type="button" class="modal-action modal-close waves-effect waves-green btn-flat"
+<button type="button" class="modal-action modal-close btn-flat"
         (click)="this.ownersAnimalsService.openModalAddOwnersAnimals()">Добавить хозяина
 </button>
 
@@ -22,10 +22,10 @@
     <td>{{item.gender_animals}}</td>
     <td>{{item.date_handed_over_to_owner}}</td>
     <td>{{item.return_date_reason}}</td>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.ownersAnimalsService.openModalEditOwnersAnimals(item)">Изменить
     </button>
-    <button type="button" class="waves-effect waves-teal btn-flat"
+    <button type="button" class="btn-flat"
             (click)="this.ownersAnimalsService.openModalDeleteOwnersAnimals(item.id)">Удалить
     </button>
   </ng-template>

@@ -21,9 +21,11 @@ export class AddResponsibleComponent implements OnInit {
     this.responsibleService.getResponsible()
     this.form = new FormGroup({
       full_name_responsible: new FormControl('', [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_responsible: new FormControl('', [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       vkontakte_link: new FormControl('', [

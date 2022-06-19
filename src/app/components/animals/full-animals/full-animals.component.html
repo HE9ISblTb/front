@@ -5,6 +5,8 @@
         <td class="right">animal_id</td>
         <td>{{this.animalsService.fullAnimals.animal_id}}</td>
       </tr>
+      <div class="divider"></div>
+      <div>Таблица животного</div>
       <tr>
         <td class="right">nickname_animals</td>
         <td>{{this.animalsService.fullAnimals.nickname_animals}}</td>
@@ -61,6 +63,8 @@
         <td class="right">owner_animals</td>
         <td>{{this.animalsService.fullAnimals.owner_animals}}</td>
       </tr>
+      <div class="divider"></div>
+      <div>Таблица пункт содержания</div>
       <tr>
         <td class="right">name_content</td>
         <td>{{this.animalsService.fullAnimals.name_content}}</td>
@@ -77,6 +81,8 @@
         <td class="right">payment</td>
         <td>{{this.animalsService.fullAnimals.payment}}</td>
       </tr>
+      <div class="divider"></div>
+      <div>Таблица ответственное лицо</div>
       <tr>
         <td class="right">full_name_responsible</td>
         <td>{{this.animalsService.fullAnimals.full_name_responsible}}</td>
@@ -89,6 +95,8 @@
         <td class="right">vkontakte_link</td>
         <td>{{this.animalsService.fullAnimals.vkontakte_link}}</td>
       </tr>
+      <div class="divider"></div>
+      <div>Таблица хозяева</div>
       <tr>
         <td class="right">full_name</td>
         <td>{{this.animalsService.fullAnimals.full_name}}</td>
@@ -113,7 +121,7 @@
   </div>
   <div class="modal-footer">
     <a (click)="animalsService.closeModalFullAnimals()"
-       class=" modal-action modal-close waves-effect waves-green btn-flat">Закрыть
+       class=" modal-action modal-close btn-flat">Закрыть
     </a>
   </div>
 </div>

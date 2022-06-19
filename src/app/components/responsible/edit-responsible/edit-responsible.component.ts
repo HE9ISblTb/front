@@ -20,9 +20,11 @@ export class EditResponsibleComponent implements OnInit {
     this.responsibleService.getResponsible();
     this.form = new FormGroup({
       full_name_responsible: new FormControl(this.responsibleService.arrayForEdit.full_name_responsible, [
+        Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
       phone_responsible: new FormControl(this.responsibleService.arrayForEdit.phone_responsible, [
+        Validators.pattern('^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$'),
         Validators.required
       ]),
       vkontakte_link: new FormControl(this.responsibleService.arrayForEdit.vkontakte_link, [
