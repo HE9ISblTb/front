@@ -28,7 +28,7 @@ export class AddAnimalsComponent implements OnInit {
         Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
-      gender_animals: new FormControl('', [
+      gender_animal: new FormControl('', [
         Validators.pattern('^[мж]'),
         Validators.required
       ]),
@@ -82,7 +82,7 @@ export class AddAnimalsComponent implements OnInit {
       const body = {
         nickname_animals: this.form.value.nickname_animals,
         animal_species: this.form.value.animal_species,
-        gender_animals: this.form.value.gender_animals,
+        gender_animal: this.form.value.gender_animal,
         photo_video: this.form.value.photo_video,
         responsible_person: this.form.value.responsible_person,
         date_of_birth: this.form.value.date_of_birth,

@@ -3,4 +3,5 @@ export class Responsible {
   full_name_responsible: string
   phone_responsible: string
   vkontakte_link: string
+  animal_id: string
 }

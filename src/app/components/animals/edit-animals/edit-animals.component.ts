@@ -29,7 +29,7 @@ export class EditAnimalsComponent implements OnInit {
         Validators.pattern('^[а-яА-ЯёЁ ]+$'),
         Validators.required
       ]),
-      gender_animals: new FormControl(this.animalsService.arrayForEdit.gender_animals, [
+      gender_animal: new FormControl(this.animalsService.arrayForEdit.gender_animal, [
         Validators.pattern('^[мж]'),
         Validators.required
       ]),
@@ -84,7 +84,7 @@ export class EditAnimalsComponent implements OnInit {
         id: this.animalsService.arrayForEdit.id,
         nickname_animals: this.form.value.nickname_animals,
         animal_species: this.form.value.animal_species,
-        gender_animals: this.form.value.gender_animals,
+        gender_animal: this.form.value.gender_animal,
         photo_video: this.form.value.photo_video,
         responsible_person: this.form.value.responsible_person,
         date_of_birth: this.form.value.date_of_birth,

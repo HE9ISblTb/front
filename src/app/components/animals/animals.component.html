@@ -1,6 +1,9 @@
 <button type="button" class="modal-action btn-flat"
         (click)="this.animalsService.openModalAddAnimals()">Добавить животное
 </button>
+<button type="button" class="modal-action btn-flat"
+                 (click)="attachedAnimals()">Пристроенные животные
+</button>
 
 <app-add-animals *ngIf="this.animalsService.indicatorModalAddAnimals">
 </app-add-animals>
@@ -19,7 +22,7 @@
     <td>{{item.id}}</td>
     <td (click)="this.animalsService.getFullAnimal(item.id)">{{item.nickname_animals}}</td>
     <td>{{item.animal_species}}</td>
-    <td>{{item.gender_animals}}</td>
+    <td>{{item.gender_animal}}</td>
     <td>{{item.photo_video}}</td>
     <td>{{item.responsible_person}}</td>
     <td>{{item.vaccination}}</td>

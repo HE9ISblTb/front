@@ -38,6 +38,13 @@ export class AnimalsService implements OnDestroy {
     });
   }
 
+  public getAttachedAnimals() {
+    const url = `${environment.serverUrl}/api/attached-animals`;
+    this.http.get<Get>(url).subscribe((data) => {
+      this.animals = data['data'];
+    });
+  }
+
   public addAnimals(body: any) {
     const url = `${environment.serverUrl}/api/add-animals`;
     this.http.post<any>(url, body).subscribe((response) => {
@@ -80,7 +87,6 @@ export class AnimalsService implements OnDestroy {
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.code === 200) {
         this.fullAnimals = response.data;
-        console.log(this.fullAnimals);
         this.openModalFullAnimals();
       } else {
       }

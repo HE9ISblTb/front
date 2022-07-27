@@ -9,7 +9,7 @@ import {appService} from "../../services/app-service";
 })
 export class ResponsibleComponent implements OnInit {
 
-  public header = ['id', 'ФИО', 'Номер телефона', 'Адрес Вконтакте'];
+  public header = ['id', 'ФИО', 'Номер телефона', 'Адрес Вконтакте', 'ID животного'];
 
   constructor(public responsibleService: ResponsibleService,
               public appService: appService) {

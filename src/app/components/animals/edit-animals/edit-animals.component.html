@@ -19,11 +19,11 @@
     </div>
     <div>
       <label
-        [ngClass]="(form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched) ? this.errorClass : this.notErrorClass"
-        for="gender_animals">Пол животного</label>
+        [ngClass]="(form.controls['gender_animal'].invalid && form.controls['gender_animal'].touched) ? this.errorClass : this.notErrorClass"
+        for="gender_animal">Пол животного</label>
       <input
-        [ngClass]="form.controls['gender_animals'].invalid && form.controls['gender_animals'].touched ? this.errorClass : this.notErrorClass"
-        id="gender_animals" type="text" maxlength="1" formControlName="gender_animals">
+        [ngClass]="form.controls['gender_animal'].invalid && form.controls['gender_animal'].touched ? this.errorClass : this.notErrorClass"
+        id="gender_animal" type="text" maxlength="1" formControlName="gender_animal">
     </div>
     <div>
       <label

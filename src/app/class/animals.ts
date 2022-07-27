@@ -2,7 +2,7 @@ export class Animals {
   id: number
   nickname_animals: string
   animal_species: string
-  gender_animals: string
+  gender_animal: string
   photo_video: string
   responsible_person: string
   date_of_birth: string
