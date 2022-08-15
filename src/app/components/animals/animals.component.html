@@ -1,4 +1,4 @@
-<button type="button" class="modal-action btn-flat"
+<button type="button" class="btn-flat modal-trigger"
         (click)="this.animalsService.openModalAddAnimals()">Добавить животное
 </button>
 <button type="button" class="modal-action btn-flat"
@@ -30,10 +30,10 @@
     <td>{{item.sterilization_castration}}</td>
     <td>{{item.content_item}}</td>
     <td>{{item.balance}}</td>
-    <button type="button" class="btn-flat"
+    <button type="button" class="btn-flat modal-trigger"
             (click)="this.animalsService.openModalEditAnimals(item)">Изменить
     </button>
-    <button type="button" class="btn-flat"
+    <button type="button" class="btn-flat modal-trigger"
             (click)="this.animalsService.openModalDeleteAnimals(item.id)">Удалить
     </button>
   </ng-template>

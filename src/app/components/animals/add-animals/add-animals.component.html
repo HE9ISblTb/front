@@ -1,3 +1,4 @@
+<div class="shadow" (click)="animalsService.closeModalAddAnimals()"></div>
 <div class="modal custom-modal">
   <form class="modal-content" [formGroup]="form">
     <h4>Добавить животное</h4>
@@ -121,10 +122,10 @@
   </form>
   <div class="modal-footer">
     <a (click)="addData()"
-       class=" modal-action modal-close btn-flat">Добавить
+       class=" modal-action modal-close waves-effect waves-red btn-flat">Добавить
     </a>
     <a (click)="animalsService.closeModalAddAnimals()"
-       class=" modal-action modal-close btn-flat">Закрыть
+       class=" modal-action modal-close waves-effect waves-red btn-flat">Закрыть
     </a>
   </div>
 </div>
